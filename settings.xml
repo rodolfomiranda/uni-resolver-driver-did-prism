@@ -1,0 +1,14 @@
+<settings>
+    <servers>
+        <server>
+            <id>roots-id-maven-public</id>
+            <username>${env.GITHUB_USER}</username>
+            <password>${env.GITHUB_TOKEN}</password>
+        </server>
+        <server>
+            <id>input-output-maven-public</id>
+            <username>${env.PRISM_SDK_USER}</username>
+            <password>${env.PRISM_SDK_PASSWORD}</password>
+        </server>
+    </servers>
+</settings>
