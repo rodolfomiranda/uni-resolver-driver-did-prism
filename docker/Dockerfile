@@ -5,10 +5,7 @@ MAINTAINER Rodolfo Miranda <rodolfo.miranda@rootsid.com>
 
 # build driver-did-prism
 
-ENV PRISM_SDK_PASSWORD="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"
-ENV PRISM_SDK_USER="atala-dev"
-ENV GITHUB_USER="rodolfomiranda"
-ENV GITHUB_TOKEN="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"
+
 
 ADD . /opt/driver-did-prism
 RUN cd /opt/driver-did-prism && mvn clean install package -P war -N -DskipTests --settings settings.xml
