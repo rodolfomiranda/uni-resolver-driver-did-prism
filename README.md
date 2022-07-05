@@ -13,14 +13,14 @@ This is a [Universal Resolver](https://github.com/decentralized-identity/univers
 ## Example DIDs
 
 ```
- ddid:prism:5100054ac26b61aee90d632f58a1d8dac85680a9b76045bd6c7140c1ba54e9c7
+ did:prism:db47e78dd57d2043a7a704fbd9d186a586682110a2097ac06dbc83b35602f290
 ```
 
 ## Build and Run (Docker)
 
 ```
-docker build -f ./docker/Dockerfile . -t universalresolver/driver-did-prism
-docker run -p 8080:8080 universalresolver/driver-did-prism
+docker build -f ./docker/Dockerfile . -t rodolfomiranda/driver-did-prism
+docker run -p 8080:8080 rodolfomiranda/driver-did-prism
 curl -X GET http://localhost:8080/1.0/identifiers/did:prism:db47e78dd57d2043a7a704fbd9d186a586682110a2097ac06dbc83b35602f290
 ```
 
@@ -30,19 +30,11 @@ curl -X GET http://localhost:8080/1.0/identifiers/did:prism:db47e78dd57d2043a7a7
 	
 ## Driver Environment Variables
 
-The driver recognizes the following environment variables:
+The driver needs the following environment variables:
 
-### `uniresolver_driver_did_btcr_bitcoinConnection`
-
- * Specifies how the driver interacts with the Bitcoin blockchain.
- * Possible values: 
-   * `bitcoind`: Connects to a [bitcoind](https://bitcoin.org/en/full-node) instance via JSON-RPC
-   * `btcd`: Connects to a [btcd](https://github.com/btcsuite/btcd) instance via JSON-RPC
-   * `bitcoinj`: Connects to Bitcoin using a local [bitcoinj](https://bitcoinj.github.io/) client
-   * `blockcypherapi`: Connects to [BlockCypher's API](https://www.blockcypher.com/dev/bitcoin/)
- * Default value: `blockcypherapi`
-
-
-
-
-
+- PRISM_NODE_HOST= PRISM node such as `ppp-node-test.atalaprism.io`
+- PRISM_NODE_PORT=PRISM port such as `50053`
+- PRISM_SDK_USER= User to access Prism SDK (request to IOG)
+- PRISM_SDK_PASSWORD= Password to access Prism SDK (request to IOG)
+- GITHUB_USER= your github user
+- GITHUB_TOKEN= github personal access token [(PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)) with `read:packages` option enabled.
