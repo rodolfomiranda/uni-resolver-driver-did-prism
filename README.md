@@ -23,12 +23,12 @@ Since this driver is not yet published into Decentralized Identity Foundation re
 ```
 docker build \
 -f ./docker/Dockerfile . \
--t rodopincha/driver-did-prism \
+-t rodopincha/uni-resolver-driver-did-prism \
 --build-arg PRISM_SDK_USER=${PRISM_SDK_USER} \
 --build-arg PRISM_SDK_PASSWORD=${PRISM_SDK_PASSWORD} \
 --build-arg GITHUB_USER=${GITHUB_USER} \
 --build-arg GITHUB_TOKEN=${GITHUB_TOKEN} 
-docker run -p 8080:8080 rodopincha/driver-did-prism
+docker run -p 8080:8080 rodopincha/uni-resolver-driver-did-prism
 curl -X GET http://localhost:8080/1.0/identifiers/did:prism:db47e78dd57d2043a7a704fbd9d186a586682110a2097ac06dbc83b35602f290
 ```
 

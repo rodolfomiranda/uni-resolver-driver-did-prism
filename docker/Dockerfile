@@ -1,4 +1,4 @@
-# Dockerfile for rodopincha/driver-did-prism
+# Dockerfile for rodopincha/uni-resolver-driver-did-prism
 
 FROM maven:3-jdk-11 AS build
 LABEL Rodolfo Miranda <rodolfo.miranda@rootsid.com>
