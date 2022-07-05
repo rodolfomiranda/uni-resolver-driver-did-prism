@@ -5,12 +5,6 @@ LABEL Rodolfo Miranda <rodolfo.miranda@rootsid.com>
 
 # build driver-did-prism
 
-# ENV PRISM_SDK_PASSWORD=
-# ENV PRISM_SDK_USER=
-# ENV GITHUB_USER=
-# ENV GITHUB_TOKEN=
-# ENV PRISM_NODE_HOST="ppp-node-test.atalaprism.io"
-# ENV PRISM_NODE_PORT=50053
 
 ADD . /opt/driver-did-prism
 RUN cd /opt/driver-did-prism && mvn clean install package -P war -N -DskipTests -s settings.xml
