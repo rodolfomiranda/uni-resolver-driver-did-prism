@@ -4,6 +4,8 @@
 
 This is a [Universal Resolver](https://github.com/decentralized-identity/universal-resolver/) driver for **did:prism** identifiers.
 
+Since this driver is not yet published into Decentralized Identity Foundation repository, you can use our forked [Universal Resolver](https://github.com/rodolfomiranda/universal-resolver) that deploys all official driver plus this one.
+
 ## Specifications
 
 * [Decentralized Identifiers](https://w3c.github.io/did-core/)
@@ -19,8 +21,21 @@ This is a [Universal Resolver](https://github.com/decentralized-identity/univers
 ## Build and Run (Docker)
 
 ```
-docker build -f ./docker/Dockerfile . -t rodolfomiranda/driver-did-prism
-docker run -p 8080:8080 rodolfomiranda/driver-did-prism
+docker build \
+-f ./docker/Dockerfile . \
+-t rodopincha/driver-did-prism \
+--build-arg PRISM_SDK_USER=${PRISM_SDK_USER} \
+--build-arg PRISM_SDK_PASSWORD=${PRISM_SDK_PASSWORD} \
+--build-arg GITHUB_USER=${GITHUB_USER} \
+--build-arg GITHUB_TOKEN=${GITHUB_TOKEN} 
+docker run -p 8080:8080 rodopincha/driver-did-prism
+curl -X GET http://localhost:8080/1.0/identifiers/did:prism:db47e78dd57d2043a7a704fbd9d186a586682110a2097ac06dbc83b35602f290
+```
+
+## Pull from DockerHub
+```
+docker pull rodopincha/uni-resolver-driver-did-prism
+docker run -p 8080:8080 rodopincha/uni-resolver-driver-did-prism
 curl -X GET http://localhost:8080/1.0/identifiers/did:prism:db47e78dd57d2043a7a704fbd9d186a586682110a2097ac06dbc83b35602f290
 ```
 
