@@ -23,6 +23,7 @@ Since this driver is not yet published into Decentralized Identity Foundation re
 ```
 docker build \
 -f ./docker/Dockerfile . \
+--platform=linux/amd64 \
 -t rodopincha/uni-resolver-driver-did-prism \
 --build-arg PRISM_SDK_USER=${PRISM_SDK_USER} \
 --build-arg PRISM_SDK_PASSWORD=${PRISM_SDK_PASSWORD} \
