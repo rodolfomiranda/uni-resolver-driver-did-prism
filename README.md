@@ -18,6 +18,11 @@ Since this driver is not yet published into Decentralized Identity Foundation re
  did:prism:db47e78dd57d2043a7a704fbd9d186a586682110a2097ac06dbc83b35602f290
 ```
 
+## Test on RootsID Cloud Service
+```
+curl -X GET https://uni-resolver.rootsid.cloud/1.0/identifiers/did:prism:db47e78dd57d2043a7a704fbd9d186a586682110a2097ac06dbc83b35602f290
+```
+
 ## Build and Run (Docker)
 
 ```
